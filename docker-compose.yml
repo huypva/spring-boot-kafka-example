@@ -1,14 +1,14 @@
 version: "3.4"
 services:
-  spring-boot-kafka:
-    build: spring-boot-kafka
-    container_name: 'spring-boot-kafka'
-    environment:
-      - spring_profiles_active=docker
-    ports:
-      - 8081:8081
-    networks:
-      - kafka-network
+#  spring-boot-kafka:
+#    build: spring-boot-kafka
+#    container_name: 'spring-boot-kafka'
+#    environment:
+#      - spring_profiles_active=docker
+#    ports:
+#      - 8081:8081
+#    networks:
+#      - kafka-network
   zookeeper:
     image: 'bitnami/zookeeper:latest'
     container_name: 'zookeeper'

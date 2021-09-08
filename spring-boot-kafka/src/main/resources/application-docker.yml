@@ -1,0 +1,9 @@
+server:
+  port : 8081
+spring:
+  application:
+    name: "user-service"
+  kafka:
+    bootstrap-servers: "127.0.0.1:9093"
+    listener:
+      missing-topics-fatal: false

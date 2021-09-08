@@ -25,20 +25,41 @@ The example project for StringBoot service
     [Docker Compose](https://github.com/docker/compose)
 
 ## Start project
-## Start project in local
-## Start project in docker 
+### Start project in local
+
+- Install infrastructure
+
+- Build project
+```shell script
+$ mvn clean package
+$ cd spring-boot-kafka
+$ mvn spring-boot:run
+...
+```
+
+### Start project in docker 
 
 - Start project
-```console
+```shell script
 docker-compose up -d
 ```
 
-- Some request & test
-
-
 - Stop project
-```console
+```shell script
 docker-compose down
+```
+
+## Run test
+
+```shell script
+curl -H "Content-Type: application/json" --request POST --data '{"message":"xyz"}' http://localhost:8081/greet/1
+```
+
+Service log:
+```text
+2021-09-08 10:45:03.982  INFO 5697 --- [ntainer#0-0-C-1] i.c.s.e.kafka.ByeUserKafkaConsumer       : Consumed - Partition: 0 - Offset: 1 - Value: {"user_id":1,"message":"xyz"}
+2021-09-08 10:45:03.982  INFO 5697 --- [ntainer#0-0-C-1] i.c.s.e.kafka.ByeUserKafkaConsumer       : Bye use 1 with message xyz
+
 ```
 
 ## Contribute

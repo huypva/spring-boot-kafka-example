@@ -1,0 +1,11 @@
+server:
+  port : 8081
+spring:
+  profiles:
+    active: local
+  application:
+    name: "user-service"
+  kafka:
+    bootstrap-servers: "localhost:9093"
+    listener:
+      missing-topics-fatal: false

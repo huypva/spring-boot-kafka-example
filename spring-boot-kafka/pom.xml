@@ -20,13 +20,31 @@
 	</properties>
 
 	<dependencies>
-		<!--spring mvc, rest-->
+		<!--  spring mvc, rest  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!--Unit test-->
+		<!--  messaging -->
+		<dependency>
+			<artifactId>spring-kafka</artifactId>
+			<groupId>org.springframework.kafka</groupId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!--  lombok  -->
+		<dependency>
+			<artifactId>lombok</artifactId>
+			<groupId>org.projectlombok</groupId>
+			<optional>true</optional>
+		</dependency>
+
+		<!--  unit test  -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
