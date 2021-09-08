@@ -15,14 +15,14 @@ public class UserUseCaseImpl implements UserUseCase {
   KafkaProducer kafkaProducer;
 
   @Override
-  public void greete(UserMessage user) {
-    log.info("Greete user {} ", user.getUserId());
+  public void greet(UserMessage user) {
+    log.info("Greet user {} ", user.getUserId());
 
     kafkaProducer.sendUserMesage(user);
   }
 
   @Override
-  public void bye(UserMessage user) {
+  public void goodbye(UserMessage user) {
     //do something
     log.info("Goodbye user {} with message {}", user.getUserId(), user.getMessage());
   }

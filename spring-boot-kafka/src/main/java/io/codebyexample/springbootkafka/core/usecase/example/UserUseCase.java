@@ -5,7 +5,7 @@ import io.codebyexample.springbootkafka.core.entity.UserMessage;
 /** @author sateam */
 public interface UserUseCase {
 
-  void greete(UserMessage user);
+  void greet(UserMessage user);
 
-  void bye(UserMessage user);
+  void goodbye(UserMessage user);
 }

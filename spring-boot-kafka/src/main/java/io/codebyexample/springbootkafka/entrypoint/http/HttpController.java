@@ -28,7 +28,7 @@ public class HttpController {
         .userId(userId)
         .message(messageEntity.message)
         .build();
-    userUseCase.greete(user);
+    userUseCase.greet(user);
   }
 
 }
