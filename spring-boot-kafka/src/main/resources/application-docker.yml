@@ -4,6 +4,6 @@ spring:
   application:
     name: "user-service"
   kafka:
-    bootstrap-servers: "127.0.0.1:9093"
+    bootstrap-servers: "${KAFKA_HOST}:9093"
     listener:
       missing-topics-fatal: false
