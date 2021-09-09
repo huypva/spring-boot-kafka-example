@@ -1,15 +1,10 @@
 package io.codebyexample.springbootkafka.entrypoint.http;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.doNothing;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
-import io.codebyexample.springbootkafka.core.entity.UserMessage;
 import io.codebyexample.springbootkafka.core.usecase.example.UserUseCase;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,13 +27,16 @@ public class HttpControllerTest {
 
   @Test
   void greet() throws Exception {
-    String api = "/greet/1";
     int userId = 1;
+    String api = "/greet/" + userId;
     String bodyContent = "{\"message\":\"xyz\"}";
 
-    doNothing().when(userUseCase).greet(new UserMessage(userId, "xyz"));
+    doNothing().when(userUseCase).greet(any());
 
-    ResultActions resultActions = mockMvc.perform(post(api).content(bodyContent))
+    ResultActions resultActions = mockMvc
+        .perform(post(api)
+            .content(bodyContent)
+            .contentType("application/json"))
         .andDo(print());
 
     resultActions.andExpect(status().isOk());
