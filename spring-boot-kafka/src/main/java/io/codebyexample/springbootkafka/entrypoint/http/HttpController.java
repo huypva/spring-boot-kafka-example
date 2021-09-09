@@ -21,12 +21,10 @@ public class HttpController {
 
   @RequestMapping(value = "/greet/{userId}", method = RequestMethod.POST)
   public void greet(@PathVariable("userId") long userId,
-                    @RequestBody String body) {
-    MessageEntity messageEntity = GsonUtils.fromJson(body, MessageEntity.class);
-
+                    @RequestBody Message message) {
     UserMessage user = UserMessage.builder()
         .userId(userId)
-        .message(messageEntity.message)
+        .message(message.getMessage())
         .build();
     userUseCase.greet(user);
   }
