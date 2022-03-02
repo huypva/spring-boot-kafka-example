@@ -31,9 +31,9 @@ The example project for StringBoot service
 
 - Build project
 ```shell script
-$ mvn clean package
+$ ./mvnw clean package
 $ cd spring-boot-kafka
-$ mvn spring-boot:run
+$ ../mvnw spring-boot:run
 ...
 ```
 
@@ -41,18 +41,18 @@ $ mvn spring-boot:run
 
 - Start project
 ```shell script
-docker-compose up -d
+$ docker-compose up -d
 ```
 
 - Stop project
 ```shell script
-docker-compose down
+$ docker-compose down
 ```
 
 ## Run test
 
 ```shell script
-curl -H "Content-Type: application/json" --request POST --data '{"message":"xyz"}' http://localhost:8081/greet/1
+$ curl -H "Content-Type: application/json" --request POST --data '{"message":"xyz"}' http://localhost:8081/greet/1
 ```
 
 Service log:
